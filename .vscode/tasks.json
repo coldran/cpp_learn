@@ -4,12 +4,22 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "Build",
             "type": "shell",
             "command": "g++",
             "args": [
-                "-g", "cpp_3_7.cpp"
-            ]
+                "-Wall",
+                "${file}",
+                "-o",
+                "dbg_${fileBasenameNoExtension}.out",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
         }
     ]
 }

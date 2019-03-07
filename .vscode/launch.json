@@ -6,10 +6,10 @@
     "configurations": [
         {
             "name": "(gdb) Launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "Build",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/a.out",
+            "program": "${fileDirname}/dbg_${fileBasenameNoExtension}.out",
             "args": ["1", "2"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
