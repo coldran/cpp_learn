@@ -12,7 +12,6 @@ int main(int argc, char const *argv[])
     int &b{a};
     int *p{&a};
     int &q{*p};
-
     std::cout << b << std::endl;
     return 0;
 }
