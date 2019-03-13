@@ -196,7 +196,32 @@ void test5()
     std::vector<int> l;
     int a[cnt];
     int b[l.size()];
-    
+    std::cout << a << b << std::endl;
+}
+
+void exercise3_43()
+{ // 输出二位数组的不同方式
+    int ia[3][4]{0, 1, 2, 3, 4, 5, 6, 7};
+
+    // for (auto &p : ia) // ia的元素是长度为4的int数组，所以是这个4长度数组赋值给p，又因为数组赋值给auto会转化成指针,所以p会被赋值为指针，则在内部循环中，指针没有end，出错
+    //     for (auto q : p)
+    //         std::cout << q << " ";
+
+    for (int (&p)[4] : ia) // 定义p为4长度数组的引用，进行范围for
+        for (int q : p) // q为4长度数组内元素，进行范围for
+            std::cout << q << " ";
+    std::cout << std::endl;
+
+    for (size_t i{0}; i < 3; ++i) // 定义下标类型i，外层循环
+        for (size_t j{0}; j < 4; ++j) // 定义下标类型j，内层循环
+            std::cout << ia[i][j] << " ";
+    std::cout << std::endl;
+
+    typedef int (*point_arry)[4]; // 定义指向4长度int数组的指针
+    for (point_arry p = std::begin(ia); p != std::end(ia); p++) // p为指向4长度int数组的指针，从ia中循环读取4长度数组的地址
+        for (int *q = std::begin(*p); q != std::end(*p); q++) // q为指向int的指针，从4长度数组中循环读取
+            std::cout << *q << " ";
+    std::cout << std::endl;
 }
 
 int main(int argc, char const *argv[])
@@ -216,5 +241,6 @@ int main(int argc, char const *argv[])
     // exercise3_21();
     // exercise3_23();
     // test5();
+    // exercise3_43();
     return 0;
 }
