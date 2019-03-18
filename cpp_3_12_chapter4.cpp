@@ -80,6 +80,30 @@ void test3()
     cout << sizeof(int) << " " << sizeof(char) << endl;
 }
 
+void test4()
+{ // 测试 将void*指针转换回原来的类型并且进行操作
+    double dB = 1, *pP = &dB;
+    void* pQ = pP;
+    cout << *static_cast<double*>(pQ) << endl;
+}
+
+void test5()
+{ // 测试类型转换的const_cast
+    int nA = 1, *pQ = &nA;
+    const int *pP = &nA;
+    // *pP = 2; wrong
+    // *pQ = 2;
+    int *pR = const_cast<int*>(pP);
+    *pR = 3; // 如果对象本身(nA)是常量，通过pR写值是未定义的
+    cout << nA << endl;
+}
+
+void exercise4_36()
+{
+    int i = 3;
+    double d = 3.14;
+    cout << (i *= static_cast<int>(d)) << endl;
+}
 
 int main(int argc, char const *argv[])
 {
@@ -89,7 +113,9 @@ int main(int argc, char const *argv[])
     // exercise4_10();
     // exercise4_11();
     // test2();
-    test3();
-
+    // test3();
+    // test4();
+    // test5();
+    exercise4_36();
     return 0;
 }
