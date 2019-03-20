@@ -74,6 +74,32 @@ void test2()
     }
 }
 
+string (&exercise6_36(void))[10]
+{ // 返回数组的引用
+    static string sTest[10]{"a", "b"};
+    return sTest;
+}
+
+using strarr = string[10];
+strarr &exercise6_37_1(void)
+{ // 类型别名
+    static string sTest[10]{"a", "b"};
+    return sTest;
+}
+
+auto exercise6_37_2(void) -> string(&)[10]
+{ // 后置返回类型
+    static string sTest[10]{"a", "b"};
+    return sTest;
+}
+
+string nArr[10];
+decltype(nArr) &exercise6_37_3(void)
+{ // decltype关键字返回
+    static string sTest[10]{"a", "b"};
+    return sTest;
+}
+
 int main(int argc, char const *argv[])
 {
     // int nA = 1, nB = 2;
@@ -95,6 +121,16 @@ int main(int argc, char const *argv[])
     // exercise6_33(vnTest);
 
     // test2();
+
+    // string (&sReturn)[10] = exercise6_36();
+    // for(auto i : sReturn)
+    //     cout << i << endl;
+
+    // string (&sReturn)[10] = exercise6_37_1();
+
+    // string (&sReturn)[10] = exercise6_37_2();
+
+    // string (&sReturn)[10] = exercise6_37_3();
 
     return EXIT_SUCCESS;
 }
