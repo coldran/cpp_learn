@@ -116,6 +116,6 @@ int main(int argc, char const *argv[])
     // test3();
     // test4();
     // test5();
-    exercise4_36();
+    // exercise4_36();
     return 0;
 }

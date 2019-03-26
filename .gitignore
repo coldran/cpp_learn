@@ -34,5 +34,7 @@
 
 # My configuration
 .vscode
+.vs
 infile*
 outfile*
+CppProperties.json

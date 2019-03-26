@@ -191,12 +191,12 @@ void exercise3_23()
 }
 
 void test5()
-{ //测试 非常量表达式作为维度定义数组; 错误 但不会报错
-    unsigned cnt = 42;
-    std::vector<int> l;
-    int a[cnt];
-    int b[l.size()];
-    std::cout << a << b << std::endl;
+{ //测试 非常量表达式作为维度定义数组; 错误 
+    // unsigned cnt = 42;
+    // std::vector<int> l;
+    // int a[cnt];
+    // int b[l.size()];
+    // std::cout << a << b << std::endl;
 }
 
 void exercise3_43()
